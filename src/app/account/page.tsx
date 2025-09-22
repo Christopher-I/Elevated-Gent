@@ -1,14 +1,17 @@
 'use client'
 
+import { useState } from 'react'
 import { PagePadding, Container } from '@/components/layout'
 import { Button } from '@/components/ui'
 import { useAuth } from '@/lib/firebase/auth'
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import { useRouter } from 'next/navigation'
+import { ProfileEditModal } from '@/components/account/ProfileEditModal'
 
 export default function AccountPage() {
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
   const router = useRouter()
+  const [showEditProfile, setShowEditProfile] = useState(false)
 
   const handleBookSession = () => {
     router.push('/services')
@@ -23,12 +26,20 @@ export default function AccountPage() {
   }
 
   const handleEditProfile = () => {
-    // For now, just show an alert - you can implement a profile edit modal later
-    alert('Profile editing feature coming soon!')
+    setShowEditProfile(true)
   }
 
   const handleWeeklyFinds = () => {
     router.push('/weekly')
+  }
+
+  const handleSignOut = async () => {
+    try {
+      await signOut()
+      router.push('/')
+    } catch (error) {
+      console.error('Error signing out:', error)
+    }
   }
 
   return (
@@ -93,12 +104,22 @@ export default function AccountPage() {
                     <label className="block text-sm font-semibold font-sans uppercase mb-2">
                       Style Preferences
                     </label>
-                    <p className="font-serif">Set up your style profile and preferences</p>
+                    <div className="space-y-2">
+                      <p className="font-serif text-sm text-gray-600">• Casual Style: Not set</p>
+                      <p className="font-serif text-sm text-gray-600">• Work Style: Not set</p>
+                      <p className="font-serif text-sm text-gray-600">• Budget Range: Not set</p>
+                      <p className="font-serif text-xs text-blue-600 mt-2">Click "Edit Profile" to set your preferences</p>
+                    </div>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full" onClick={handleEditProfile}>
-                  Edit Profile
-                </Button>
+                <div className="space-y-3">
+                  <Button variant="outline" className="w-full" onClick={handleEditProfile}>
+                    Edit Profile
+                  </Button>
+                  <Button variant="outline" className="w-full text-red-600 border-red-200 hover:bg-red-50" onClick={handleSignOut}>
+                    Sign Out
+                  </Button>
+                </div>
               </div>
 
               {/* Styling Sessions */}
@@ -171,6 +192,12 @@ export default function AccountPage() {
           </Container>
         </PagePadding>
       </section>
+
+      {/* Profile Edit Modal */}
+      <ProfileEditModal
+        isOpen={showEditProfile}
+        onClose={() => setShowEditProfile(false)}
+      />
     </ProtectedRoute>
   )
 }
