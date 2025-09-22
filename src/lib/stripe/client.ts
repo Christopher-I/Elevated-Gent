@@ -7,20 +7,20 @@ export const stripePromise = loadStripe(
 
 // Service prices (in cents)
 export const SERVICE_PRICES = {
-  'personal-styling': {
-    name: '1:1 Personal Styling',
-    price: 19700, // $197.00
-    description: '90-minute virtual or in-person session',
+  'foundation-package': {
+    name: 'The Foundation Package',
+    price: 25000, // $250.00
+    description: 'Seasonal lookbook (5 curated outfits) + personal shopping + 1 month support',
   },
-  'wardrobe-audit': {
-    name: 'Wardrobe Audit',
-    price: 29700, // $297.00
-    description: '2-hour wardrobe assessment',
+  'signature-refresh': {
+    name: 'The Signature Refresh',
+    price: 50000, // $500.00
+    description: '30min consultation + seasonal lookbook (10 outfits) + shopping + support',
   },
-  'complete-transformation': {
-    name: 'Complete Style Transformation',
-    price: 49700, // $497.00
-    description: '3 styling sessions (6 hours total)',
+  'gentlemens-upgrade': {
+    name: 'The Gentlemen\'s Upgrade',
+    price: 75000, // $750.00
+    description: '1hr consultation + full lookbook (20 outfits) + shopping + support + try-on session',
   },
 } as const
 
