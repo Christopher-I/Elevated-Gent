@@ -107,88 +107,82 @@ export default function ServicesPage() {
         <PagePadding>
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* 1:1 Styling */}
+              {/* The Foundation Package */}
+              <div className="border border-black p-8 space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold font-sans">
+                    The Foundation Package
+                  </h3>
+                  <p className="font-serif text-muted">
+                    Perfect for getting started with your style journey. Get a curated seasonal lookbook and personal shopping guidance.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="text-3xl font-semibold">$250</div>
+                  <ul className="space-y-2 font-serif text-sm">
+                    <li>• Seasonal lookbook (5 curated outfits for work, social, events, casual)</li>
+                    <li>• Personal shopping: links + recommended brands/stores</li>
+                    <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
+                  </ul>
+                </div>
+
+                <Button className="w-full" onClick={() => handleBookSession('foundation-package')}>
+                  Book Package
+                </Button>
+              </div>
+
+              {/* The Signature Refresh */}
               <div className="border border-black p-8 space-y-6">
                 <div className="space-y-4">
                   <Label>Most Popular</Label>
                   <h3 className="text-2xl font-semibold font-sans">
-                    1:1 Personal Styling
+                    The Signature Refresh
                   </h3>
                   <p className="font-serif text-muted">
-                    One-on-one styling session to define your personal style and create
-                    versatile outfits from your existing wardrobe.
+                    Comprehensive style refresh with consultation and expanded lookbook. Perfect for leveling up your style game.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="text-3xl font-semibold">$197</div>
+                  <div className="text-3xl font-semibold">$500</div>
                   <ul className="space-y-2 font-serif text-sm">
-                    <li>• 90-minute virtual or in-person session</li>
-                    <li>• Personal style assessment</li>
-                    <li>• Outfit creation from existing pieces</li>
-                    <li>• Style guide document</li>
+                    <li>• 30min style consultation</li>
+                    <li>• Seasonal lookbook (10 curated outfits for work, social, events, casual)</li>
+                    <li>• Personal shopping: links + recommended brands/stores</li>
+                    <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
                   </ul>
                 </div>
 
-                <Button className="w-full" onClick={() => handleBookSession('personal-styling')}>
-                  Book Session
+                <Button className="w-full" onClick={() => handleBookSession('signature-refresh')}>
+                  Book Package
                 </Button>
               </div>
 
-              {/* Wardrobe Audit */}
-              <div className="border border-black p-8 space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold font-sans">
-                    Wardrobe Audit
-                  </h3>
-                  <p className="font-serif text-muted">
-                    Comprehensive review of your current wardrobe with recommendations
-                    for optimization and strategic additions.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="text-3xl font-semibold">$297</div>
-                  <ul className="space-y-2 font-serif text-sm">
-                    <li>• 2-hour wardrobe assessment</li>
-                    <li>• Closet organization strategy</li>
-                    <li>• Keep/donate/alter recommendations</li>
-                    <li>• Shopping list for key pieces</li>
-                  </ul>
-                </div>
-
-                <Button variant="outline" className="w-full" onClick={handleLearnMore}>
-                  Learn More
-                </Button>
-              </div>
-
-              {/* Complete Transformation */}
+              {/* The Gentlemen's Upgrade */}
               <div className="border border-black p-8 space-y-6 bg-background-muted">
                 <div className="space-y-4">
                   <Label variant="inverse">Premium</Label>
                   <h3 className="text-2xl font-semibold font-sans">
-                    Complete Style Transformation
+                    The Gentlemen&apos;s Upgrade
                   </h3>
                   <p className="font-serif text-muted">
-                    Our most comprehensive package combining wardrobe audit,
-                    personal shopping, and ongoing styling support.
+                    Our most comprehensive package with full consultation, extensive lookbook, and hands-on styling support.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-semibold">$497</span>
-                    <span className="text-lg text-muted line-through">$593</span>
-                  </div>
+                  <div className="text-3xl font-semibold">$750</div>
                   <ul className="space-y-2 font-serif text-sm">
-                    <li>• 3 styling sessions (6 hours total)</li>
-                    <li>• Complete wardrobe audit</li>
-                    <li>• Personal shopping session</li>
-                    <li>• 30-day follow-up support</li>
+                    <li>• 1 hour style consultation (create a plan, outlook, and a view of your current closet)</li>
+                    <li>• Full seasonal lookbook (20 curated outfits for work, social, events, casual)</li>
+                    <li>• Personal shopping: links + recommended brands/stores</li>
+                    <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
+                    <li>• 1 hour outfit try on consultation for outfit building, styling, and guided online shopping</li>
                   </ul>
                 </div>
 
-                <Button className="w-full" onClick={() => handleBookSession('complete-transformation')}>
+                <Button className="w-full" onClick={() => handleBookSession('gentlemens-upgrade')}>
                   Book Package
                 </Button>
               </div>
@@ -289,9 +283,8 @@ export default function ServicesPage() {
                     Do you help with shopping for new pieces?
                   </h3>
                   <p className="font-serif text-muted">
-                    Absolutely. Our Wardrobe Audit and Complete Transformation packages
-                    include shopping recommendations, and we can also accompany you
-                    for personal shopping sessions.
+                    Absolutely. All our packages include personal shopping with links and recommended brands/stores.
+                    Our premium Gentlemen&apos;s Upgrade package also includes guided online shopping sessions.
                   </p>
                 </div>
               </div>
