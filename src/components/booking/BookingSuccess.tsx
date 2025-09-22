@@ -78,7 +78,7 @@ export function BookingSuccess({ onClose }: BookingSuccessProps) {
 
       <div className="bg-blue-50 p-4 rounded-lg mb-6">
         <p className="text-sm font-serif text-blue-800">
-          <strong>Pro tip:</strong> Start thinking about your style goals and any specific pieces you'd like to focus on.
+          <strong>Pro tip:</strong> Start thinking about your style goals and any specific pieces you&apos;d like to focus on.
           This will help us make the most of your session time.
         </p>
       </div>

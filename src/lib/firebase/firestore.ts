@@ -5,14 +5,11 @@ import {
   getDocs,
   addDoc,
   updateDoc,
-  deleteDoc,
   query,
   where,
   orderBy,
   limit,
-  startAfter,
   Timestamp,
-  DocumentSnapshot,
 } from 'firebase/firestore'
 import { db } from './config'
 
