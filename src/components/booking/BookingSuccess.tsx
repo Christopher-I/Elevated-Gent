@@ -84,7 +84,14 @@ export function BookingSuccess({ onClose }: BookingSuccessProps) {
       </div>
 
       <div className="space-y-3">
-        <Button onClick={onClose} className="w-full">
+        <Button
+          onClick={() => window.open('https://calendly.com/markkoob', '_blank')}
+          className="w-full"
+        >
+          Schedule Your Session
+        </Button>
+
+        <Button onClick={onClose} variant="outline" className="w-full">
           Continue Browsing
         </Button>
 

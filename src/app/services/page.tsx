@@ -93,7 +93,7 @@ export default function ServicesPage() {
                 that reflects your personality, lifestyle, and professional goals.
               </p>
               <div className="pt-4">
-                <Button size="lg" variant="inverse" onClick={() => handleBookSession()}>
+                <Button size="lg" variant="inverse" onClick={() => handleBookSession('signature-refresh')}>
                   Book Your Session
                 </Button>
               </div>
