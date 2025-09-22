@@ -127,7 +127,7 @@ export default function WeeklyPage() {
               </div>
               <p className="text-lg md:text-xl font-serif text-muted max-w-3xl mx-auto leading-relaxed px-4">
                 Curated weekly selections featuring the best finds, deals, budget-friendly options,
-                luxury pieces, accessories, and emerging brands in men's fashion.
+                luxury pieces, accessories, and emerging brands in men&apos;s fashion.
               </p>
             </div>
           </Container>

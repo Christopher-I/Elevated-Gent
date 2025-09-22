@@ -16,8 +16,8 @@ export default function CreateTestUsersPage() {
     try {
       await createTestUsers()
       setMessage('✅ Test users created successfully!')
-    } catch (error: any) {
-      setMessage(`❌ Error: ${error.message}`)
+    } catch (error: unknown) {
+      setMessage(`❌ Error: ${error instanceof Error ? error.message : 'Unknown error occurred'}`)
     } finally {
       setLoading(false)
     }

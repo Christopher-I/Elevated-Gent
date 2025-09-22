@@ -108,7 +108,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold font-sans mb-4">8. Children's Privacy</h2>
+                <h2 className="text-2xl font-semibold font-sans mb-4">8. Children&apos;s Privacy</h2>
                 <div className="font-serif text-gray-700 space-y-4">
                   <p>Our services are not intended for children under 18. We do not knowingly collect personal information from children under 18.</p>
                 </div>

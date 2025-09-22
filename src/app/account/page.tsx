@@ -143,7 +143,7 @@ export default function AccountPage() {
               <div className="text-center p-6 border border-gray-200 rounded-lg">
                 <h4 className="text-lg font-semibold font-sans mb-2">Weekly Finds</h4>
                 <p className="text-sm font-serif text-muted mb-4">
-                  Discover this week's best fashion picks
+                  Discover this week&apos;s best fashion picks
                 </p>
                 <Button size="sm" onClick={handleWeeklyFinds}>
                   Browse Finds
