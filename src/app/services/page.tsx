@@ -110,6 +110,7 @@ export default function ServicesPage() {
               {/* The Foundation Package */}
               <div className="border border-black p-8 flex flex-col h-full">
                 <div className="space-y-4 mb-6">
+                  <div className="h-6"></div>
                   <h3 className="text-2xl font-semibold font-sans">
                     The Foundation Package
                   </h3>
