@@ -4,8 +4,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { NAVIGATION_LINKS, SOCIAL_LINKS } from '@/lib/constants'
 import { PagePadding, Container } from '@/components/layout'
+import { useAuth } from '@/lib/firebase/auth'
+import { Button } from '@/components/ui'
 
 export function Header() {
+  const { user, logout } = useAuth()
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+    } catch (error) {
+      console.error('Logout error:', error)
+    }
+  }
+
   return (
     <header className="relative">
       {/* Main Navbar */}
@@ -29,26 +41,30 @@ export function Header() {
               {/* Navigation Right */}
               <div className="flex items-center justify-end">
                 <div className="flex items-center gap-6 pl-6">
-                  {/* Menu Links */}
-                  <div className="z-1 flex items-center justify-center gap-6">
-                    {NAVIGATION_LINKS.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="group relative h-7 overflow-hidden text-decoration-none"
-                      >
-                        <div className="font-serif text-xl block">
-                          {link.name}
-                        </div>
-                        <div className="font-serif text-xl block">
-                          {link.name}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                  {/* Menu Links - Only show when user is authenticated */}
+                  {user && (
+                    <>
+                      <div className="z-1 flex items-center justify-center gap-6">
+                        {NAVIGATION_LINKS.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="group relative h-7 overflow-hidden text-decoration-none transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
+                          >
+                            <div className="font-serif text-xl block">
+                              {link.name}
+                            </div>
+                            <div className="font-serif text-xl block">
+                              {link.name}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
 
-                  {/* Menu Border */}
-                  <div className="w-[15px] h-px bg-black" />
+                      {/* Menu Border */}
+                      <div className="w-[15px] h-px bg-black" />
+                    </>
+                  )}
 
                   {/* Social Links */}
                   <div className="z-1 flex items-center justify-center gap-4">
@@ -57,7 +73,7 @@ export function Header() {
                         <Link
                           href={social.href}
                           target="_blank"
-                          className="inline-block"
+                          className="inline-block transition-all duration-300 ease-in-out hover:scale-125 hover:text-gray-600 cursor-pointer"
                         >
                           <div className="w-5 h-5 flex">
                             {social.icon === 'Instagram' && (
@@ -83,6 +99,23 @@ export function Header() {
                       </div>
                     ))}
                   </div>
+
+                  {/* User Menu */}
+                  {user && (
+                    <div className="ml-6 flex items-center gap-4">
+                      <span className="text-sm font-serif text-gray-600">
+                        {user.displayName || user.email}
+                      </span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleLogout}
+                        className="text-sm"
+                      >
+                        Logout
+                      </Button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Mobile Menu Toggle (hidden for now) */}

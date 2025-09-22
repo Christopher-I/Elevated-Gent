@@ -1,29 +1,45 @@
+'use client'
+
 import { PagePadding, Container } from '@/components/layout'
 import { Button, Label } from '@/components/ui'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Professional styling services for the modern gentleman',
-}
+import { useAuth } from '@/lib/firebase/auth'
+import ProtectedRoute from '@/components/auth/ProtectedRoute'
+import Image from 'next/image'
 
 export default function ServicesPage() {
+  const { user } = useAuth()
+
   return (
-    <>
-      {/* Hero Section */}
-      <section className="py-16">
+    <ProtectedRoute>
+      {/* Hero Section with Background */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fashion-runway.jpeg"
+            alt="Professional styling services"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         <PagePadding>
           <Container>
-            <div className="text-center space-y-8">
+            <div className="relative z-10 text-center space-y-8">
               <div className="overflow-hidden">
-                <h1 className="text-6xl font-semibold font-sans leading-tight">
-                  Styling Services
+                <h1 className="text-6xl font-semibold font-sans leading-tight text-white">
+                  Welcome back, {user?.displayName?.split(' ')[0] || 'there'}
                 </h1>
               </div>
-              <p className="text-xl font-serif text-muted max-w-3xl mx-auto leading-relaxed">
-                Professional styling services designed to help you develop a signature look
+              <p className="text-xl font-serif text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Choose from our professional styling services designed to help you develop a signature look
                 that reflects your personality, lifestyle, and professional goals.
               </p>
+              <div className="pt-4">
+                <Button size="lg" variant="inverse">
+                  Book Your Session
+                </Button>
+              </div>
             </div>
           </Container>
         </PagePadding>
@@ -226,6 +242,6 @@ export default function ServicesPage() {
           </Container>
         </PagePadding>
       </section>
-    </>
+    </ProtectedRoute>
   )
 }

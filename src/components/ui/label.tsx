@@ -12,7 +12,7 @@ const Label = React.forwardRef<HTMLSpanElement, LabelProps>(
         ref={ref}
         className={cn(
           // Base label styles matching Webflow design
-          'inline-block px-3 py-2 text-xs font-serif uppercase tracking-wider leading-tight border border-black rounded-full whitespace-nowrap relative overflow-hidden transition-colors',
+          'inline-block px-3 py-2 text-xs font-serif uppercase tracking-wider leading-tight border border-black rounded-full whitespace-nowrap relative overflow-hidden transition-all duration-300 ease-in-out cursor-pointer hover:scale-105 active:scale-95',
           {
             'text-black bg-white border-black hover:bg-black hover:text-white': variant === 'default',
             'text-white bg-black border-white hover:bg-white hover:text-black': variant === 'inverse',

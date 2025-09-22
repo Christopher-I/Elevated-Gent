@@ -9,7 +9,7 @@ export const APP_CONFIG = {
 // Navigation Links
 export const NAVIGATION_LINKS = [
   { name: 'Services', href: '/services' },
-  { name: 'Products', href: '/products' },
+  { name: 'Collections', href: '/collections' },
   { name: 'Account', href: '/account' },
 ] as const
 
