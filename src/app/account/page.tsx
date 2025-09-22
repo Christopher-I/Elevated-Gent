@@ -4,9 +4,28 @@ import { PagePadding, Container } from '@/components/layout'
 import { Button } from '@/components/ui'
 import { useAuth } from '@/lib/firebase/auth'
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
+import { useRouter } from 'next/navigation'
 
 export default function AccountPage() {
   const { user } = useAuth()
+  const router = useRouter()
+
+  const handleBookSession = () => {
+    router.push('/services')
+  }
+
+  const handleViewCollections = () => {
+    router.push('/collections')
+  }
+
+  const handleLearnMore = () => {
+    router.push('/services')
+  }
+
+  const handleEditProfile = () => {
+    // For now, just show an alert - you can implement a profile edit modal later
+    alert('Profile editing feature coming soon!')
+  }
 
   return (
     <ProtectedRoute>
@@ -73,7 +92,7 @@ export default function AccountPage() {
                     <p className="font-serif">Set up your style profile and preferences</p>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full" onClick={handleEditProfile}>
                   Edit Profile
                 </Button>
               </div>
@@ -100,7 +119,7 @@ export default function AccountPage() {
                     </div>
                   </div>
                 </div>
-                <Button className="w-full">
+                <Button className="w-full" onClick={handleBookSession}>
                   Book Your First Session
                 </Button>
               </div>
@@ -113,7 +132,7 @@ export default function AccountPage() {
                 <p className="text-sm font-serif text-muted mb-4">
                   Explore our curated affiliate collections
                 </p>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" onClick={handleViewCollections}>
                   View Collections
                 </Button>
               </div>
@@ -122,7 +141,7 @@ export default function AccountPage() {
                 <p className="text-sm font-serif text-muted mb-4">
                   Book a 1:1 styling session
                 </p>
-                <Button size="sm">
+                <Button size="sm" onClick={handleBookSession}>
                   Book Now
                 </Button>
               </div>
@@ -131,7 +150,7 @@ export default function AccountPage() {
                 <p className="text-sm font-serif text-muted mb-4">
                   Optimize your existing wardrobe
                 </p>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" onClick={handleLearnMore}>
                   Learn More
                 </Button>
               </div>

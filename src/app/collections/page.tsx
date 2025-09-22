@@ -5,7 +5,7 @@ import { PagePadding, Container } from '@/components/layout'
 import { Button, Label } from '@/components/ui'
 import Image from 'next/image'
 
-// Define collection data with tags
+// Define collection data with tags and affiliate links
 const collections = [
   {
     id: 1,
@@ -14,7 +14,8 @@ const collections = [
     image: "/images/Image 3.jpeg",
     price: "From $89",
     label: "Shop The Look",
-    tags: ["casual", "essentials", "denim"]
+    tags: ["casual", "essentials", "denim"],
+    affiliateLink: "https://www.mrporter.com/en-us/mens/category/clothing"
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const collections = [
     image: "/images/Image 5 (1).jpeg",
     price: "From $299",
     label: "Premium",
-    tags: ["formal", "accessories", "leather"]
+    tags: ["formal", "accessories", "leather"],
+    affiliateLink: "https://www.nordstrom.com/browse/men/clothing/jackets-coats"
   },
   {
     id: 3,
@@ -32,7 +34,8 @@ const collections = [
     image: "/images/Image 12 (1).jpeg",
     price: "From $399",
     label: "Complete Look",
-    tags: ["formal", "evening", "business"]
+    tags: ["formal", "evening", "business"],
+    affiliateLink: "https://www.suitsupply.com/en-us/men/suits"
   },
   {
     id: 4,
@@ -41,7 +44,8 @@ const collections = [
     image: "/images/fashion-runway.jpeg",
     price: "From $149",
     label: "Featured",
-    tags: ["runway", "essentials", "trending"]
+    tags: ["runway", "essentials", "trending"],
+    affiliateLink: "https://www.ssense.com/en-us/men"
   },
   {
     id: 5,
@@ -50,7 +54,8 @@ const collections = [
     image: "/images/Image 1 (1).jpeg",
     price: "From $65",
     label: "Relaxed",
-    tags: ["casual", "weekend", "comfort"]
+    tags: ["casual", "weekend", "comfort"],
+    affiliateLink: "https://www.jcrew.com/mens"
   },
   {
     id: 6,
@@ -59,7 +64,8 @@ const collections = [
     image: "/images/Image 8 (1).jpeg",
     price: "From $75",
     label: "Seasonal",
-    tags: ["casual", "summer", "lifestyle"]
+    tags: ["casual", "summer", "lifestyle"],
+    affiliateLink: "https://www.uniqlo.com/us/en/men"
   }
 ]
 
@@ -86,12 +92,16 @@ export default function CollectionsPage() {
         <PagePadding>
           <Container>
             <div className="text-center space-y-8">
-              <div className="overflow-hidden">
-                <h1 className="text-6xl font-semibold font-sans leading-tight">
-                  CURATED COLLECTIONS
-                </h1>
+              <div className="overflow-hidden px-4">
+                <Image
+                  src="/images/Outfit-Inspiration-For-Men.svg"
+                  alt="Outfit Inspiration For Men"
+                  width={730}
+                  height={38}
+                  className="mx-auto h-6 md:h-8 lg:h-10 w-auto max-w-full"
+                />
               </div>
-              <p className="text-xl font-serif text-muted max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl font-serif text-muted max-w-3xl mx-auto leading-relaxed px-4">
                 Shop curated collections from our trusted partners. Each piece is carefully selected
                 for quality, style, and versatility to help you elevate your wardrobe.
               </p>
@@ -157,8 +167,8 @@ export default function CollectionsPage() {
                       <Button
                         size="sm"
                         onClick={() => {
-                          // Open affiliate link in new tab
-                          window.open('https://example.com/affiliate-link', '_blank')
+                          // Open actual affiliate link in new tab
+                          window.open(collection.affiliateLink, '_blank')
                         }}
                       >
                         Shop Look

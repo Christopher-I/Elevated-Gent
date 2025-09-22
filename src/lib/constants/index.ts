@@ -46,17 +46,17 @@ export const PAGINATION = {
 export const SOCIAL_LINKS = [
   {
     name: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://instagram.com/theelevatedgentleman',
     icon: 'Instagram',
   },
   {
     name: 'Twitter',
-    href: 'https://twitter.com',
+    href: 'https://twitter.com/elevatedgent',
     icon: 'Twitter',
   },
   {
     name: 'YouTube',
-    href: 'https://youtube.com',
+    href: 'https://youtube.com/@theelevatedgentleman',
     icon: 'Youtube',
   },
 ] as const

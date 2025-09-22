@@ -1,13 +1,72 @@
 'use client'
 
+import { useState } from 'react'
 import { PagePadding, Container } from '@/components/layout'
 import { Button, Label } from '@/components/ui'
 import { useAuth } from '@/lib/firebase/auth'
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { BookingForm } from '@/components/booking/BookingForm'
+import { BookingSuccess } from '@/components/booking/BookingSuccess'
+import { PaymentForm } from '@/components/payment/PaymentForm'
+import { ServiceType } from '@/lib/stripe/client'
 
 export default function ServicesPage() {
   const { user } = useAuth()
+  const router = useRouter()
+  const [showBooking, setShowBooking] = useState(false)
+  const [showPayment, setShowPayment] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [selectedService, setSelectedService] = useState<string>('')
+
+  // Choose your preferred flow:
+  // - BOOKING_FIRST: Book appointment → Get contacted → Pay later (recommended)
+  // - PAYMENT_FIRST: Pay upfront → Get appointment confirmation immediately
+  const PREFERRED_FLOW: 'BOOKING_FIRST' | 'PAYMENT_FIRST' = 'PAYMENT_FIRST' // 🔄 Toggle this
+
+  const handleBookSession = (serviceType?: string) => {
+    setSelectedService(serviceType || '')
+
+    if (PREFERRED_FLOW === 'PAYMENT_FIRST') {
+      setShowPayment(true)
+    } else {
+      setShowBooking(true)
+    }
+  }
+
+  const handleBookingSuccess = () => {
+    setShowBooking(false)
+    setShowSuccess(true)
+  }
+
+  const handlePaymentSuccess = () => {
+    setShowPayment(false)
+    setShowSuccess(true)
+  }
+
+  const handleBookingCancel = () => {
+    setShowBooking(false)
+    setSelectedService('')
+  }
+
+  const handlePaymentCancel = () => {
+    setShowPayment(false)
+    setSelectedService('')
+  }
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false)
+    setSelectedService('')
+  }
+
+  const handleLearnMore = () => {
+    // Scroll to FAQ section or show more details
+    const faqSection = document.getElementById('faq-section')
+    if (faqSection) {
+      faqSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <ProtectedRoute>
@@ -36,7 +95,7 @@ export default function ServicesPage() {
                 that reflects your personality, lifestyle, and professional goals.
               </p>
               <div className="pt-4">
-                <Button size="lg" variant="inverse">
+                <Button size="lg" variant="inverse" onClick={() => handleBookSession()}>
                   Book Your Session
                 </Button>
               </div>
@@ -73,7 +132,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                <Button className="w-full">
+                <Button className="w-full" onClick={() => handleBookSession('personal-styling')}>
                   Book Session
                 </Button>
               </div>
@@ -100,7 +159,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full" onClick={handleLearnMore}>
                   Learn More
                 </Button>
               </div>
@@ -131,7 +190,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                <Button className="w-full">
+                <Button className="w-full" onClick={() => handleBookSession('complete-transformation')}>
                   Book Package
                 </Button>
               </div>
@@ -192,7 +251,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section id="faq-section" className="py-16">
         <PagePadding>
           <Container size="medium">
             <div className="text-center space-y-12">
@@ -242,6 +301,66 @@ export default function ServicesPage() {
           </Container>
         </PagePadding>
       </section>
+
+      {/* Booking Modal */}
+      {showBooking && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-[9999]">
+          <div className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <BookingForm
+              selectedService={selectedService}
+              onSuccess={handleBookingSuccess}
+              onCancel={handleBookingCancel}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Payment Modal */}
+      {showPayment && selectedService && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-[9999]">
+          <div className="bg-white rounded-lg p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto relative">
+            {/* Close Button */}
+            <button
+              onClick={handlePaymentCancel}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer"
+              aria-label="Close modal"
+            >
+              <svg
+                className="w-5 h-5 text-gray-500 hover:text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="mb-6">
+              <h2 className="text-2xl font-semibold font-sans mb-2">
+                Complete Your Booking
+              </h2>
+              <p className="text-gray-600 font-serif">
+                Secure payment processing powered by Stripe
+              </p>
+            </div>
+
+            <PaymentForm
+              serviceType={selectedService as ServiceType}
+              onSuccess={handlePaymentSuccess}
+              onCancel={handlePaymentCancel}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Success Modal */}
+      {showSuccess && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-[9999]">
+          <div className="max-w-lg w-full">
+            <BookingSuccess onClose={handleSuccessClose} />
+          </div>
+        </div>
+      )}
     </ProtectedRoute>
   )
 }
