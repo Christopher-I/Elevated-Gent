@@ -35,11 +35,11 @@ export async function createTestUsers() {
       })
 
       console.log(`✅ Created user: ${user.name} (${user.email})`)
-    } catch (error: any) {
-      if (error.code === 'auth/email-already-in-use') {
+    } catch (error: unknown) {
+      if (error && typeof error === 'object' && 'code' in error && error.code === 'auth/email-already-in-use') {
         console.log(`ℹ️  User already exists: ${user.name} (${user.email})`)
       } else {
-        console.error(`❌ Failed to create user ${user.name}:`, error.message)
+        console.error(`❌ Failed to create user ${user.name}:`, error instanceof Error ? error.message : 'Unknown error')
       }
     }
   }

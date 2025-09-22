@@ -43,8 +43,8 @@ export default function SignInPage() {
     try {
       await signIn(email, password);
       router.push("/services");
-    } catch (error: any) {
-      setError(error.message || "Failed to sign in");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : "Failed to sign in");
     } finally {
       setLoading(false);
     }
@@ -59,8 +59,8 @@ export default function SignInPage() {
     try {
       await signIn(testUser.email, testUser.password);
       router.push("/services");
-    } catch (error: any) {
-      setError(error.message || "Failed to sign in");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : "Failed to sign in");
     } finally {
       setLoading(false);
     }

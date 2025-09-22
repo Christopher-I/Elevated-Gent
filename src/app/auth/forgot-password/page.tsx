@@ -23,8 +23,8 @@ export default function ForgotPasswordPage() {
     try {
       await resetPassword(email)
       setMessage('Check your email for password reset instructions')
-    } catch (error: any) {
-      setError(error.message || 'Failed to send reset email')
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'Failed to send reset email')
     } finally {
       setLoading(false)
     }
