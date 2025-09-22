@@ -108,81 +108,87 @@ export default function ServicesPage() {
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* The Foundation Package */}
-              <div className="border border-black p-8 space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold font-sans">
-                    The Foundation Package
-                  </h3>
-                  <p className="font-serif text-muted">
-                    Perfect for getting started with your style journey. Get a curated seasonal lookbook and personal shopping guidance.
-                  </p>
+              <div className="border border-black p-8 flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-semibold font-sans">
+                      The Foundation Package
+                    </h3>
+                    <p className="font-serif text-muted">
+                      Perfect for getting started with your style journey. Get a curated seasonal lookbook and personal shopping guidance.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="text-3xl font-semibold">$250</div>
+                    <ul className="space-y-2 font-serif text-sm">
+                      <li>• Seasonal lookbook (5 curated outfits for work, social, events, casual)</li>
+                      <li>• Personal shopping: links + recommended brands/stores</li>
+                      <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="text-3xl font-semibold">$250</div>
-                  <ul className="space-y-2 font-serif text-sm">
-                    <li>• Seasonal lookbook (5 curated outfits for work, social, events, casual)</li>
-                    <li>• Personal shopping: links + recommended brands/stores</li>
-                    <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
-                  </ul>
-                </div>
-
-                <Button className="w-full" onClick={() => handleBookSession('foundation-package')}>
+                <Button className="w-full mt-6" onClick={() => handleBookSession('foundation-package')}>
                   Book Package
                 </Button>
               </div>
 
               {/* The Signature Refresh */}
-              <div className="border border-black p-8 space-y-6">
-                <div className="space-y-4">
-                  <Label>Most Popular</Label>
-                  <h3 className="text-2xl font-semibold font-sans">
-                    The Signature Refresh
-                  </h3>
-                  <p className="font-serif text-muted">
-                    Comprehensive style refresh with consultation and expanded lookbook. Perfect for leveling up your style game.
-                  </p>
+              <div className="border border-black p-8 flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <Label>Most Popular</Label>
+                    <h3 className="text-2xl font-semibold font-sans">
+                      The Signature Refresh
+                    </h3>
+                    <p className="font-serif text-muted">
+                      Comprehensive style refresh with consultation and expanded lookbook. Perfect for leveling up your style game.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="text-3xl font-semibold">$500</div>
+                    <ul className="space-y-2 font-serif text-sm">
+                      <li>• 30min style consultation</li>
+                      <li>• Seasonal lookbook (10 curated outfits for work, social, events, casual)</li>
+                      <li>• Personal shopping: links + recommended brands/stores</li>
+                      <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="text-3xl font-semibold">$500</div>
-                  <ul className="space-y-2 font-serif text-sm">
-                    <li>• 30min style consultation</li>
-                    <li>• Seasonal lookbook (10 curated outfits for work, social, events, casual)</li>
-                    <li>• Personal shopping: links + recommended brands/stores</li>
-                    <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
-                  </ul>
-                </div>
-
-                <Button className="w-full" onClick={() => handleBookSession('signature-refresh')}>
+                <Button className="w-full mt-6" onClick={() => handleBookSession('signature-refresh')}>
                   Book Package
                 </Button>
               </div>
 
               {/* The Gentlemen's Upgrade */}
-              <div className="border border-black p-8 space-y-6 bg-background-muted">
-                <div className="space-y-4">
-                  <Label variant="inverse">Premium</Label>
-                  <h3 className="text-2xl font-semibold font-sans">
-                    The Gentlemen&apos;s Upgrade
-                  </h3>
-                  <p className="font-serif text-muted">
-                    Our most comprehensive package with full consultation, extensive lookbook, and hands-on styling support.
-                  </p>
+              <div className="border border-black p-8 bg-background-muted flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <Label variant="inverse">Premium</Label>
+                    <h3 className="text-2xl font-semibold font-sans">
+                      The Gentlemen&apos;s Upgrade
+                    </h3>
+                    <p className="font-serif text-muted">
+                      Our most comprehensive package with full consultation, extensive lookbook, and hands-on styling support.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="text-3xl font-semibold">$750</div>
+                    <ul className="space-y-2 font-serif text-sm">
+                      <li>• 1 hour style consultation (create a plan, outlook, and a view of your current closet)</li>
+                      <li>• Full seasonal lookbook (20 curated outfits for work, social, events, casual)</li>
+                      <li>• Personal shopping: links + recommended brands/stores</li>
+                      <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
+                      <li>• 1 hour outfit try on consultation for outfit building, styling, and guided online shopping</li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="text-3xl font-semibold">$750</div>
-                  <ul className="space-y-2 font-serif text-sm">
-                    <li>• 1 hour style consultation (create a plan, outlook, and a view of your current closet)</li>
-                    <li>• Full seasonal lookbook (20 curated outfits for work, social, events, casual)</li>
-                    <li>• Personal shopping: links + recommended brands/stores</li>
-                    <li>• 1 month of direct message support (ongoing feedback on outfits)</li>
-                    <li>• 1 hour outfit try on consultation for outfit building, styling, and guided online shopping</li>
-                  </ul>
-                </div>
-
-                <Button className="w-full" onClick={() => handleBookSession('gentlemens-upgrade')}>
+                <Button className="w-full mt-6" onClick={() => handleBookSession('gentlemens-upgrade')}>
                   Book Package
                 </Button>
               </div>
