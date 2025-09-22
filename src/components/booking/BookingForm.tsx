@@ -111,7 +111,7 @@ export function BookingForm({ selectedService, onSuccess, onCancel }: BookingFor
       <div className="mb-6">
         <h3 className="text-2xl font-semibold font-sans mb-2">Book Your Session</h3>
         <p className="text-gray-600 font-serif text-sm">
-          Fill out the form below and we'll contact you within 24 hours to confirm your appointment.
+          Fill out the form below and we&apos;ll contact you within 24 hours to confirm your appointment.
         </p>
       </div>
 
@@ -283,7 +283,7 @@ export function BookingForm({ selectedService, onSuccess, onCancel }: BookingFor
 
       <div className="mt-6 text-center">
         <p className="text-xs text-gray-500 font-serif">
-          We'll contact you within 24 hours to confirm your appointment and provide payment instructions.
+          We&apos;ll contact you within 24 hours to confirm your appointment and provide payment instructions.
         </p>
       </div>
     </div>

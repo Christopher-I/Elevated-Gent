@@ -6,7 +6,6 @@ import { Button, Label } from '@/components/ui'
 import { useAuth } from '@/lib/firebase/auth'
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { BookingForm } from '@/components/booking/BookingForm'
 import { BookingSuccess } from '@/components/booking/BookingSuccess'
 import { PaymentForm } from '@/components/payment/PaymentForm'
@@ -14,7 +13,6 @@ import { ServiceType } from '@/lib/stripe/client'
 
 export default function ServicesPage() {
   const { user } = useAuth()
-  const router = useRouter()
   const [showBooking, setShowBooking] = useState(false)
   const [showPayment, setShowPayment] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)

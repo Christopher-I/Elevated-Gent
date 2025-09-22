@@ -59,19 +59,19 @@ export function BookingSuccess({ onClose }: BookingSuccessProps) {
         <ul className="space-y-2 text-sm font-serif text-gray-600">
           <li className="flex items-start">
             <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5 flex-shrink-0">1</span>
-            <span>We'll review your request and contact you within 24 hours</span>
+            <span>We&apos;ll review your request and contact you within 24 hours</span>
           </li>
           <li className="flex items-start">
             <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5 flex-shrink-0">2</span>
-            <span>We'll discuss your goals and confirm the best service for you</span>
+            <span>We&apos;ll discuss your goals and confirm the best service for you</span>
           </li>
           <li className="flex items-start">
             <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5 flex-shrink-0">3</span>
-            <span>We'll schedule your session at a convenient time</span>
+            <span>We&apos;ll schedule your session at a convenient time</span>
           </li>
           <li className="flex items-start">
             <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5 flex-shrink-0">4</span>
-            <span>You'll receive secure payment instructions and session details</span>
+            <span>You&apos;ll receive secure payment instructions and session details</span>
           </li>
         </ul>
       </div>
