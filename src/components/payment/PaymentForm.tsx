@@ -57,7 +57,13 @@ function CheckoutForm({ serviceType, onSuccess, onCancel }: PaymentFormProps) {
       <div className="mb-6">
         <h3 className="text-xl font-semibold font-sans mb-2">{service.name}</h3>
         <p className="text-gray-600 font-serif text-sm mb-4">{service.description}</p>
-        <div className="text-2xl font-semibold">${(service.price / 100).toFixed(2)}</div>
+        <div className="text-2xl font-semibold mb-4">${(service.price / 100).toFixed(2)}</div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <p className="text-blue-800 text-sm font-serif">
+            💡 After completing your payment, you&apos;ll be able to schedule your session immediately using our booking calendar.
+          </p>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
