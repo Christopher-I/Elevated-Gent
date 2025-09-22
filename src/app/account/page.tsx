@@ -27,6 +27,10 @@ export default function AccountPage() {
     alert('Profile editing feature coming soon!')
   }
 
+  const handleWeeklyFinds = () => {
+    router.push('/weekly')
+  }
+
   return (
     <ProtectedRoute>
       {/* Hero Section */}
@@ -126,7 +130,7 @@ export default function AccountPage() {
             </div>
 
             {/* Quick Actions */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center p-6 border border-gray-200 rounded-lg">
                 <h4 className="text-lg font-semibold font-sans mb-2">Browse Collections</h4>
                 <p className="text-sm font-serif text-muted mb-4">
@@ -134,6 +138,15 @@ export default function AccountPage() {
                 </p>
                 <Button variant="outline" size="sm" onClick={handleViewCollections}>
                   View Collections
+                </Button>
+              </div>
+              <div className="text-center p-6 border border-gray-200 rounded-lg">
+                <h4 className="text-lg font-semibold font-sans mb-2">Weekly Finds</h4>
+                <p className="text-sm font-serif text-muted mb-4">
+                  Discover this week's best fashion picks
+                </p>
+                <Button size="sm" onClick={handleWeeklyFinds}>
+                  Browse Finds
                 </Button>
               </div>
               <div className="text-center p-6 border border-gray-200 rounded-lg">

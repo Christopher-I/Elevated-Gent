@@ -10,6 +10,7 @@ export const APP_CONFIG = {
 export const NAVIGATION_LINKS = [
   { name: 'Services', href: '/services' },
   { name: 'Collections', href: '/collections' },
+  { name: 'Weekly Finds', href: '/weekly' },
   { name: 'Account', href: '/account' },
 ] as const
 
@@ -46,18 +47,8 @@ export const PAGINATION = {
 export const SOCIAL_LINKS = [
   {
     name: 'Instagram',
-    href: 'https://instagram.com/theelevatedgentleman',
+    href: 'https://instagram.com/theelevatedgentlemen',
     icon: 'Instagram',
-  },
-  {
-    name: 'Twitter',
-    href: 'https://twitter.com/elevatedgent',
-    icon: 'Twitter',
-  },
-  {
-    name: 'YouTube',
-    href: 'https://youtube.com/@theelevatedgentleman',
-    icon: 'Youtube',
   },
 ] as const
 
