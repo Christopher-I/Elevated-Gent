@@ -19,15 +19,9 @@ const footerLinks = {
     { name: 'Shop This Look', href: '/weekly?tab=outfits' },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
     { name: 'Contact Us', href: 'mailto:hello@theelevatedgentleman.com' },
-    { name: 'Our Philosophy', href: '/philosophy' },
+    { name: 'Privacy Policy', href: '/privacy' },
   ],
-  resources: [
-    { name: 'Style Guide', href: '/guide' },
-    { name: 'Size Guide', href: '/size-guide' },
-    { name: 'How It Works', href: '/how-it-works' },
-  ]
 }
 
 export function Footer() {
@@ -110,7 +104,7 @@ export function Footer() {
       <section className="py-16">
         <PagePadding>
           <Container>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               {/* Brand Section */}
               <div className="lg:col-span-2 space-y-6">
                 <Link href="/" className="inline-block">
@@ -204,25 +198,6 @@ export function Footer() {
                 </ul>
               </div>
 
-              {/* Resources Links */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold font-sans uppercase tracking-wider">
-                  Resources
-                </h3>
-                <ul className="space-y-2">
-                  {footerLinks.resources.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        href={link.href}
-                        className="text-gray-300 hover:text-white transition-colors font-serif text-sm"
-                        {...(link.href.startsWith('mailto:') ? { target: '_blank' } : {})}
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </Container>
         </PagePadding>
@@ -238,18 +213,9 @@ export function Footer() {
               </div>
 
               <div className="flex items-center gap-6 text-sm">
-                <Link
-                  href="/privacy"
-                  className="text-gray-400 hover:text-white transition-colors font-serif"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="text-gray-400 hover:text-white transition-colors font-serif"
-                >
-                  Terms of Service
-                </Link>
+                <span className="text-gray-400 text-sm font-serif">
+                  Built with passion for style and excellence
+                </span>
               </div>
             </div>
           </Container>
