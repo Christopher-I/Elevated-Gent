@@ -132,9 +132,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
             </h3>
 
             <div>
-              <Label htmlFor="displayName" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+              <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                 Display Name
-              </Label>
+              </label>
               <input
                 id="displayName"
                 type="text"
@@ -166,9 +166,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
             </h3>
 
             <div>
-              <Label htmlFor="newPassword" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+              <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                 New Password (optional)
-              </Label>
+              </label>
               <input
                 id="newPassword"
                 type="password"
@@ -181,9 +181,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
 
             {newPassword && (
               <div>
-                <Label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                   Confirm New Password
-                </Label>
+                </label>
                 <input
                   id="confirmPassword"
                   type="password"
@@ -204,9 +204,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="casualStyle" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+                <label htmlFor="casualStyle" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                   Casual Style
-                </Label>
+                </label>
                 <select
                   id="casualStyle"
                   value={stylePreferences.casualStyle}
@@ -223,9 +223,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
               </div>
 
               <div>
-                <Label htmlFor="workStyle" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+                <label htmlFor="workStyle" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                   Work Style
-                </Label>
+                </label>
                 <select
                   id="workStyle"
                   value={stylePreferences.workStyle}
@@ -242,9 +242,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
               </div>
 
               <div>
-                <Label htmlFor="colorPreferences" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+                <label htmlFor="colorPreferences" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                   Color Preferences
-                </Label>
+                </label>
                 <input
                   id="colorPreferences"
                   type="text"
@@ -256,9 +256,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
               </div>
 
               <div>
-                <Label htmlFor="budgetRange" className="block text-sm font-medium text-gray-700 font-serif mb-2">
+                <label htmlFor="budgetRange" className="block text-sm font-medium text-gray-700 font-serif mb-2">
                   Budget Range
-                </Label>
+                </label>
                 <select
                   id="budgetRange"
                   value={stylePreferences.budgetRange}
@@ -290,9 +290,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
                   onChange={(e) => setStylePreferences({...stylePreferences, notifications: e.target.checked})}
                   className="h-4 w-4 text-black focus:ring-black border-gray-300 rounded"
                 />
-                <Label htmlFor="notifications" className="ml-3 text-sm text-gray-700 font-serif">
+                <label htmlFor="notifications" className="ml-3 text-sm text-gray-700 font-serif">
                   Receive styling session reminders and updates
-                </Label>
+                </label>
               </div>
 
               <div className="flex items-center">
@@ -303,9 +303,9 @@ export function ProfileEditModal({ isOpen, onClose }: ProfileEditModalProps) {
                   onChange={(e) => setStylePreferences({...stylePreferences, newsletter: e.target.checked})}
                   className="h-4 w-4 text-black focus:ring-black border-gray-300 rounded"
                 />
-                <Label htmlFor="newsletter" className="ml-3 text-sm text-gray-700 font-serif">
+                <label htmlFor="newsletter" className="ml-3 text-sm text-gray-700 font-serif">
                   Subscribe to weekly style tips and product recommendations
-                </Label>
+                </label>
               </div>
             </div>
           </div>

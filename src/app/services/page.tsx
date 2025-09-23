@@ -10,6 +10,7 @@ import { BookingForm } from '@/components/booking/BookingForm'
 import { BookingSuccess } from '@/components/booking/BookingSuccess'
 import { PaymentForm } from '@/components/payment/PaymentForm'
 import { ServiceType } from '@/lib/stripe/client'
+import { StructuredData } from '@/components/seo/StructuredData'
 
 export default function ServicesPage() {
   const { user } = useAuth()
@@ -68,6 +69,7 @@ export default function ServicesPage() {
 
   return (
     <ProtectedRoute>
+      <StructuredData pageKey="services" />
       {/* Hero Section with Background */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">

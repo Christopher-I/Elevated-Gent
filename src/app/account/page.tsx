@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { ProfileEditModal } from '@/components/account/ProfileEditModal'
 
 export default function AccountPage() {
-  const { user, signOut } = useAuth()
+  const { user, logout } = useAuth()
   const router = useRouter()
   const [showEditProfile, setShowEditProfile] = useState(false)
 
@@ -35,7 +35,7 @@ export default function AccountPage() {
 
   const handleSignOut = async () => {
     try {
-      await signOut()
+      await logout()
       router.push('/')
     } catch (error) {
       console.error('Error signing out:', error)

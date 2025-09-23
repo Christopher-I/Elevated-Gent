@@ -7,6 +7,7 @@ import { weeklyProducts, outfitLooks } from '@/lib/products/data'
 import { PRODUCT_CATEGORIES } from '@/lib/products/types'
 import { ProductCard } from '@/components/products/ProductCard'
 import { OutfitCard } from '@/components/products/OutfitCard'
+import { StructuredData } from '@/components/seo/StructuredData'
 
 const categoryOptions = [
   { id: 'all', label: 'All Categories' },
@@ -28,6 +29,7 @@ export default function WeeklyPage() {
 
   return (
     <>
+      <StructuredData pageKey="weekly" />
       {/* Hero Section */}
       <section className="py-16">
         <PagePadding>

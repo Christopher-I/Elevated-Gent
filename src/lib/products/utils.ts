@@ -7,12 +7,17 @@ export function getShoppableLink(product: Product): string {
 export function formatPrice(price: string): string {
   // Remove currency symbols and parse price for calculations
   const numericPrice = parseFloat(price.replace(/[^\d.-]/g, ''))
-  return numericPrice
+  return `$${numericPrice.toFixed(2)}`
+}
+
+export function parsePrice(price: string): number {
+  // Remove currency symbols and parse price for calculations
+  return parseFloat(price.replace(/[^\d.-]/g, ''))
 }
 
 export function calculateTotalPrice(products: Product[]): number {
   return products.reduce((total, product) => {
-    const price = formatPrice(product.price)
+    const price = parsePrice(product.price)
     return total + price
   }, 0)
 }
@@ -21,7 +26,7 @@ export function trackAffiliateClick(productId: string, affiliateLink?: string): 
   // Track affiliate link clicks for analytics
   if (affiliateLink && typeof window !== 'undefined') {
     // Send analytics event
-    window.gtag?.('event', 'affiliate_click', {
+    ;(window as any).gtag?.('event', 'affiliate_click', {
       product_id: productId,
       affiliate_link: affiliateLink,
     })

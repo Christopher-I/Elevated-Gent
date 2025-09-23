@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { PagePadding, Container } from '@/components/layout'
 import { Button, Label } from '@/components/ui'
 import Image from 'next/image'
+import { StructuredData } from '@/components/seo/StructuredData'
 
 // Define collection data with tags and affiliate links
 const collections = [
@@ -87,6 +88,7 @@ export default function CollectionsPage() {
 
   return (
     <>
+      <StructuredData pageKey="collections" />
       {/* Hero Section */}
       <section className="py-16">
         <PagePadding>
