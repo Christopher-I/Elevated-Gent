@@ -10,23 +10,23 @@ import { NAVIGATION_LINKS, SOCIAL_LINKS, APP_CONFIG } from '@/lib/constants'
 const footerLinks = {
   services: [
     { name: 'All Services', href: '/services' },
-    { name: 'Personal Consultation', href: '/services#consultation' },
-    { name: 'Wardrobe Audit', href: '/services#audit' },
+    { name: 'Personal Styling', href: '/services#consultation' },
+    { name: 'Wardrobe Consultation', href: '/services#audit' },
   ],
   collections: [
     { name: 'All Collections', href: '/collections' },
     { name: 'Weekly Finds', href: '/weekly' },
     { name: 'Shop This Look', href: '/weekly?tab=outfits' },
   ],
-  account: [
-    { name: 'My Account', href: '/account' },
-    { name: 'Sign In', href: '/auth/signin' },
-    { name: 'Create Account', href: '/auth/signup' },
+  company: [
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact Us', href: 'mailto:hello@theelevatedgentleman.com' },
+    { name: 'Our Philosophy', href: '/philosophy' },
   ],
-  support: [
+  resources: [
     { name: 'Style Guide', href: '/guide' },
     { name: 'Size Guide', href: '/size-guide' },
-    { name: 'Terms of Service', href: '/terms' },
+    { name: 'How It Works', href: '/how-it-works' },
   ]
 }
 
@@ -185,13 +185,13 @@ export function Footer() {
                 </ul>
               </div>
 
-              {/* Account Links */}
+              {/* Company Links */}
               <div className="space-y-4">
                 <h3 className="text-sm font-semibold font-sans uppercase tracking-wider">
-                  Account
+                  Company
                 </h3>
                 <ul className="space-y-2">
-                  {footerLinks.account.map((link) => (
+                  {footerLinks.company.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}
@@ -204,13 +204,13 @@ export function Footer() {
                 </ul>
               </div>
 
-              {/* Support Links */}
+              {/* Resources Links */}
               <div className="space-y-4">
                 <h3 className="text-sm font-semibold font-sans uppercase tracking-wider">
-                  Support
+                  Resources
                 </h3>
                 <ul className="space-y-2">
-                  {footerLinks.support.map((link) => (
+                  {footerLinks.resources.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}
@@ -249,12 +249,6 @@ export function Footer() {
                   className="text-gray-400 hover:text-white transition-colors font-serif"
                 >
                   Terms of Service
-                </Link>
-                <Link
-                  href="mailto:hello@theelevatedgentleman.com"
-                  className="text-gray-400 hover:text-white transition-colors font-serif"
-                >
-                  Contact
                 </Link>
               </div>
             </div>
