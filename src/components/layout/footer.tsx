@@ -9,28 +9,24 @@ import { NAVIGATION_LINKS, SOCIAL_LINKS, APP_CONFIG } from '@/lib/constants'
 
 const footerLinks = {
   services: [
-    { name: 'Styling Packages', href: '/services' },
+    { name: 'All Services', href: '/services' },
     { name: 'Personal Consultation', href: '/services#consultation' },
     { name: 'Wardrobe Audit', href: '/services#audit' },
-    { name: 'Book Session', href: '/services' },
   ],
   collections: [
-    { name: 'Curated Collections', href: '/collections' },
+    { name: 'All Collections', href: '/collections' },
     { name: 'Weekly Finds', href: '/weekly' },
     { name: 'Shop This Look', href: '/weekly?tab=outfits' },
-    { name: 'Seasonal Picks', href: '/collections?filter=seasonal' },
   ],
   account: [
     { name: 'My Account', href: '/account' },
     { name: 'Sign In', href: '/auth/signin' },
     { name: 'Create Account', href: '/auth/signup' },
-    { name: 'Order History', href: '/account#orders' },
   ],
   support: [
-    { name: 'Contact Us', href: 'mailto:hello@theelevatedgentleman.com' },
     { name: 'Style Guide', href: '/guide' },
     { name: 'Size Guide', href: '/size-guide' },
-    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
   ]
 }
 
