@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { Button, Label } from '@/components/ui'
 import { Product } from '@/lib/products/types'
@@ -12,6 +13,17 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, showFullDetails = true, className = '' }: ProductCardProps) {
+  const [showDetails, setShowDetails] = useState(false)
+
+  const handleShopNow = () => {
+    if (showFullDetails) {
+      setShowDetails(!showDetails)
+    } else {
+      // If not showing full details, just open the link directly
+      handleBuyProduct()
+    }
+  }
+
   const handleBuyProduct = () => {
     const url = getShoppableLink(product)
     trackAffiliateClick(product.id, product.affiliateLink)
@@ -72,7 +84,7 @@ export function ProductCard({ product, showFullDetails = true, className = '' }:
           {product.title}
         </h3>
 
-        {/* Description */}
+        {/* Description - Always show as preview */}
         {showFullDetails && (
           <p className="font-serif text-muted text-sm overflow-hidden"
              style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
@@ -80,26 +92,44 @@ export function ProductCard({ product, showFullDetails = true, className = '' }:
           </p>
         )}
 
-        {/* Tags */}
-        {showFullDetails && (
-          <div className="flex gap-1 flex-wrap">
-            {product.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full font-serif uppercase tracking-wide"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        {/* Shop Now Button */}
+        <Button
+          size="sm"
+          onClick={handleShopNow}
+          disabled={!product.inStock}
+          className="w-full"
+        >
+          {showDetails ? 'Hide Details' : (product.affiliateLink ? 'Shop Now' : 'View Product')}
+        </Button>
 
-        {/* Sizes and Colors (if available) */}
-        {showFullDetails && (product.sizes || product.colors) && (
-          <div className="space-y-2">
+        {/* Expanded Details Dropdown */}
+        {showFullDetails && showDetails && (
+          <div className="mt-4 space-y-4 border-t border-gray-200 pt-4">
+            <h4 className="font-semibold font-sans text-sm uppercase tracking-wide">
+              Product Details
+            </h4>
+
+            {/* Tags */}
+            <div>
+              <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide block mb-2">
+                Features
+              </span>
+              <div className="flex gap-1 flex-wrap">
+                {product.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full font-serif uppercase tracking-wide"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Sizes (if available) */}
             {product.sizes && (
               <div>
-                <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide block mb-1">
+                <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide block mb-2">
                   Available Sizes
                 </span>
                 <div className="flex gap-1 flex-wrap">
@@ -111,9 +141,11 @@ export function ProductCard({ product, showFullDetails = true, className = '' }:
                 </div>
               </div>
             )}
+
+            {/* Colors (if available) */}
             {product.colors && (
               <div>
-                <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide block mb-1">
+                <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide block mb-2">
                   Available Colors
                 </span>
                 <div className="flex gap-1 flex-wrap">
@@ -125,25 +157,24 @@ export function ProductCard({ product, showFullDetails = true, className = '' }:
                 </div>
               </div>
             )}
+
+            {/* Category */}
+            <div className="pt-3 border-t border-gray-200">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-serif text-gray-500">
+                  Category: {product.category}
+                </span>
+                <Button
+                  size="sm"
+                  onClick={handleBuyProduct}
+                  disabled={!product.inStock}
+                >
+                  Buy Now
+                </Button>
+              </div>
+            </div>
           </div>
         )}
-
-        {/* Action Area */}
-        <div className="flex items-center justify-between pt-2">
-          {showFullDetails && (
-            <span className="text-sm font-serif text-muted">
-              {product.category}
-            </span>
-          )}
-          <Button
-            size="sm"
-            onClick={handleBuyProduct}
-            disabled={!product.inStock}
-            className={showFullDetails ? "" : "w-full"}
-          >
-            {product.affiliateLink ? 'Shop Now' : 'View Product'}
-          </Button>
-        </div>
       </div>
     </div>
   )

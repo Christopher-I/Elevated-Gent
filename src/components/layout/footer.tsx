@@ -9,14 +9,14 @@ import { NAVIGATION_LINKS, SOCIAL_LINKS, APP_CONFIG } from '@/lib/constants'
 
 const footerLinks = {
   services: [
-    { name: 'All Services', href: '/services' },
-    { name: 'Personal Styling', href: '/services#consultation' },
-    { name: 'Wardrobe Consultation', href: '/services#audit' },
+    { name: 'All Services', href: '/personal-styling' },
+    { name: 'Personal Styling', href: '/personal-styling#consultation' },
+    { name: 'Wardrobe Consultation', href: '/personal-styling#audit' },
   ],
   collections: [
-    { name: 'All Collections', href: '/collections' },
+    { name: 'Outfit Inspiration', href: '/outfit-inspiration' },
     { name: 'Weekly Finds', href: '/weekly' },
-    { name: 'Shop This Look', href: '/weekly?tab=outfits' },
+    { name: 'Wellness Articles', href: '/wellness' },
   ],
   company: [
     { name: 'Contact Us', href: 'mailto:hello@theelevatedgentleman.com' },

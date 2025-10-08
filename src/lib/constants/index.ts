@@ -8,9 +8,10 @@ export const APP_CONFIG = {
 
 // Navigation Links
 export const NAVIGATION_LINKS = [
-  { name: 'Services', href: '/services' },
-  { name: 'Collections', href: '/collections' },
+  { name: 'Personal Styling', href: '/personal-styling' },
+  { name: 'Outfit Inspiration', href: '/outfit-inspiration' },
   { name: 'Weekly Finds', href: '/weekly' },
+  { name: 'Wellness', href: '/wellness' },
   { name: 'Account', href: '/account' },
 ] as const
 
@@ -60,3 +61,22 @@ export const API_ROUTES = {
   auth: '/api/auth',
   stripe: '/api/stripe',
 } as const
+
+// Wellness Article Categories
+export const WELLNESS_CATEGORIES = [
+  { id: 'all', name: 'All Articles', slug: 'all' },
+  { id: 'blueprint', name: 'The Grooming Blueprint', slug: 'blueprint' },
+  { id: 'confidence', name: 'Confidence & Wellness', slug: 'confidence' },
+  { id: 'occasion', name: 'By Occasion', slug: 'occasion' },
+  { id: 'products', name: 'Product Reviews', slug: 'products' },
+  { id: 'lifestyle', name: 'Lifestyle', slug: 'lifestyle' },
+] as const
+
+// Article Occasions (maps to outfit categories)
+export const ARTICLE_OCCASIONS = [
+  { id: 'streetwear', name: 'Streetwear', slug: 'streetwear' },
+  { id: 'casual', name: 'Casual', slug: 'casual' },
+  { id: 'evening', name: 'Evening', slug: 'evening' },
+  { id: 'business', name: 'Business Casual', slug: 'business' },
+  { id: 'vacation', name: 'Vacation', slug: 'vacation' },
+] as const

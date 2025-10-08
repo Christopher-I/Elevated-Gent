@@ -143,51 +143,100 @@ export const weeklyProducts: Product[] = [
 export const outfitLooks: OutfitLook[] = [
   {
     id: 'smart-casual-weekend',
-    title: "Smart Casual Weekend",
-    description: "Perfect for weekend outings, casual dates, or relaxed social gatherings. Combines comfort with style.",
+    title: "Cobalt Blue Merino Sweater",
+    description: "A refined essential crafted from pure merino wool. Perfect for smart casual occasions.",
     heroImage: "https://media.cos.com/assets/001/cd/1c/cd1c2d2ff2a4d76c77cd97b30cebbf9b6e64bf38_xxl-1.jpg",
     occasion: "Weekend",
     season: "Fall/Winter",
     styleType: "Smart Casual",
     products: [
-      weeklyProducts.find(p => p.id === 'cos-merino-sweater')!,
-      weeklyProducts.find(p => p.id === 'acne-2021m-jeans')!,
-      weeklyProducts.find(p => p.id === 'leather-loafers')!
+      weeklyProducts.find(p => p.id === 'cos-merino-sweater')!
     ],
-    totalPrice: 759,
+    totalPrice: 129,
     featured: true
   },
   {
     id: 'elevated-street-style',
-    title: "Elevated Street Style",
-    description: "Contemporary street style with premium touches. Perfect for creative professionals and modern casual wear.",
+    title: "Digital Denim Print Jeans",
+    description: "Italian denim with trompe l'oeil vintage print. Relaxed wide-legged fit for elevated streetwear.",
     heroImage: "https://ourlegacy.centracdn.net/client/dynamic/images/8380_3868101f95-m4205tdd_3166-rtail-big.jpg",
     occasion: "Casual",
     season: "Spring/Summer",
     styleType: "Modern",
     products: [
-      weeklyProducts.find(p => p.id === 'poolhouse-silverlake-crop')!,
-      weeklyProducts.find(p => p.id === 'ourlegacy-third-cut-denim')!,
-      weeklyProducts.find(p => p.id === 'bananarepublic-suede-trucker')!
+      weeklyProducts.find(p => p.id === 'ourlegacy-third-cut-denim')!
     ],
-    totalPrice: 1045,
+    totalPrice: 430,
     featured: true
   },
   {
     id: 'business-casual-refined',
-    title: "Business Casual Refined",
-    description: "Sophisticated business casual look that works for client meetings, office days, or professional events.",
+    title: "Manhattan Oversized Overcoat",
+    description: "Wall Street tailoring meets west coast casual. Precise construction with relaxed silhouette in Deep Moss.",
     heroImage: "https://california-arts.com/cdn/shop/files/CA-AUG--13362_2048x2048.jpg?v=1757563502",
     occasion: "Work",
     season: "Fall/Winter",
     styleType: "Business Casual",
     products: [
-      weeklyProducts.find(p => p.id === 'white-dress-shirt')!,
-      weeklyProducts.find(p => p.id === 'california-arts-overcoat')!,
-      weeklyProducts.find(p => p.id === 'acne-2021m-jeans')!,
-      weeklyProducts.find(p => p.id === 'leather-loafers')!
+      weeklyProducts.find(p => p.id === 'california-arts-overcoat')!
     ],
-    totalPrice: 1466,
+    totalPrice: 748,
+    featured: false
+  },
+  {
+    id: 'date-night-sophisticated',
+    title: "Premium Suede Trucker Jacket",
+    description: "Classic western-inspired silhouette in rich suede. Perfect for sophisticated date nights.",
+    heroImage: "/images/Image 5 (1).jpeg",
+    occasion: "Date Night",
+    season: "All Seasons",
+    styleType: "Smart Casual",
+    products: [
+      weeklyProducts.find(p => p.id === 'bananarepublic-suede-trucker')!
+    ],
+    totalPrice: 550,
+    featured: true
+  },
+  {
+    id: 'modern-streetwear',
+    title: "Elevated Runway Streetwear",
+    description: "High-fashion runway pieces with urban edge. Contemporary silhouettes for the modern gentleman.",
+    heroImage: "/images/fashion-runway.jpeg",
+    occasion: "Casual",
+    season: "Spring/Summer",
+    styleType: "Streetwear",
+    products: [
+      weeklyProducts.find(p => p.id === 'ourlegacy-third-cut-denim')!
+    ],
+    totalPrice: 430,
+    featured: true
+  },
+  {
+    id: 'casual-weekend-vibes',
+    title: "Straight-Leg Premium Denim",
+    description: "Contemporary straight-leg jeans with modern fit. A staple for the discerning wardrobe.",
+    heroImage: "/images/Image 3.jpeg",
+    occasion: "Weekend",
+    season: "All Seasons",
+    styleType: "Casual",
+    products: [
+      weeklyProducts.find(p => p.id === 'acne-2021m-jeans')!
+    ],
+    totalPrice: 350,
+    featured: false
+  },
+  {
+    id: 'relaxed-crop-tee',
+    title: "Boxy Crop Tee",
+    description: "Drop-shoulder relaxed fit with contemporary styling. Perfect for casual weekend wear.",
+    heroImage: "/images/Image 1 (1).jpeg",
+    occasion: "Weekend",
+    season: "Spring/Summer",
+    styleType: "Casual",
+    products: [
+      weeklyProducts.find(p => p.id === 'poolhouse-silverlake-crop')!
+    ],
+    totalPrice: 65,
     featured: false
   }
 ]

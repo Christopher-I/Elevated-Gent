@@ -70,10 +70,10 @@ export const seoPages = {
       ]
     }
   },
-  services: {
-    title: 'Professional Styling Services - The Elevated Gentleman',
+  'personal-styling': {
+    title: 'Personal Styling Services - The Elevated Gentleman',
     description: 'Book professional styling consultations starting at $250. Get personalized lookbooks, shopping guidance, and 1-month support from expert stylists.',
-    keywords: ['styling packages', 'personal styling consultation', 'lookbook creation', 'wardrobe consultation'],
+    keywords: ['personal styling', 'styling packages', 'personal styling consultation', 'lookbook creation', 'wardrobe consultation'],
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -107,15 +107,15 @@ export const seoPages = {
       ]
     }
   },
-  collections: {
-    title: 'Curated Fashion Collections - The Elevated Gentleman',
-    description: 'Shop carefully curated men\'s fashion collections from trusted partners. Discover smart casual, formal wear, and seasonal pieces for the discerning gentleman.',
-    keywords: ['curated fashion', 'men\'s collections', 'smart casual', 'formal wear', 'seasonal fashion'],
+  'outfit-inspiration': {
+    title: 'Outfit Inspiration - The Elevated Gentleman',
+    description: 'Discover curated outfit inspiration from trusted partners. Browse streetwear, date night, casual, and formal looks for the discerning gentleman.',
+    keywords: ['outfit inspiration', 'men\'s outfits', 'streetwear', 'date night outfits', 'smart casual', 'formal wear'],
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: 'Curated Fashion Collections',
-      description: 'Carefully selected fashion pieces for the modern gentleman'
+      name: 'Outfit Inspiration',
+      description: 'Carefully curated outfit looks for the modern gentleman'
     }
   },
   weekly: {

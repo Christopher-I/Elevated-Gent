@@ -69,7 +69,7 @@ export default function ServicesPage() {
 
   return (
     <ProtectedRoute>
-      <StructuredData pageKey="services" />
+      <StructuredData pageKey="personal-styling" />
       {/* Hero Section with Background */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
