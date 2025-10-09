@@ -162,7 +162,7 @@ export function Header() {
       </div>
 
       {/* Enhanced Mobile Menu */}
-      <div className={`md:hidden fixed inset-0 z-[998] transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'visible' : 'invisible'}`}>
+      <div className={`md:hidden fixed inset-0 z-[1100] transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'visible' : 'invisible'}`}>
         {/* Backdrop */}
         <div
           className={`absolute inset-0 bg-black transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-50' : 'opacity-0'}`}
