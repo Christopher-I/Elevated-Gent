@@ -42,7 +42,7 @@ export default function SignInPage() {
 
     try {
       await signIn(email, password);
-      router.push("/services");
+      router.push("/personal-styling");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "Failed to sign in");
     } finally {
@@ -58,7 +58,7 @@ export default function SignInPage() {
 
     try {
       await signIn(testUser.email, testUser.password);
-      router.push("/services");
+      router.push("/personal-styling");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "Failed to sign in");
     } finally {

@@ -5,6 +5,7 @@ import { Header, Footer } from '@/components/layout'
 import { APP_CONFIG } from '@/lib/constants'
 import { AuthProvider } from '@/lib/firebase/auth'
 import { CartProvider } from '@/lib/hooks/useCart'
+import { SubscriptionGate } from '@/components/subscription/SubscriptionGate'
 
 const bitter = Bitter({
   subsets: ['latin'],
@@ -55,13 +56,15 @@ export default function RootLayout({
       <body className={bitter.variable}>
         <AuthProvider>
           <CartProvider>
-            <div className="page-wrapper">
-              <Header />
-              <main className="main-wrapper">
-                {children}
-              </main>
-              <Footer />
-            </div>
+            <SubscriptionGate>
+              <div className="page-wrapper">
+                <Header />
+                <main className="main-wrapper">
+                  {children}
+                </main>
+                <Footer />
+              </div>
+            </SubscriptionGate>
           </CartProvider>
         </AuthProvider>
       </body>

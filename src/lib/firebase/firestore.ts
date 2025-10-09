@@ -19,6 +19,10 @@ export interface User {
   email: string
   displayName?: string
   photoURL?: string
+  subscriptionStatus?: 'active' | 'inactive' | 'cancelled'
+  stripeCustomerId?: string
+  stripeSubscriptionId?: string
+  subscriptionStartDate?: Timestamp
   createdAt: Timestamp
   updatedAt: Timestamp
   preferences?: {
@@ -115,6 +119,7 @@ export async function createUser(userId: string, userData: Partial<User>) {
     email: userData.email || '',
     displayName: userData.displayName,
     photoURL: userData.photoURL,
+    subscriptionStatus: 'inactive',
     createdAt: now,
     updatedAt: now,
     preferences: {

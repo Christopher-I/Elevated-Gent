@@ -22,6 +22,11 @@ export const SERVICE_PRICES = {
     price: 75000, // $750.00
     description: '1hr consultation + full lookbook (20 outfits) + shopping + support + try-on session',
   },
+  'monthly-subscription': {
+    name: 'Monthly Subscription',
+    price: 200, // $2.00
+    description: 'Access to all styling services, curated collections, and exclusive content',
+  },
 } as const
 
 export type ServiceType = keyof typeof SERVICE_PRICES

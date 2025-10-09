@@ -38,7 +38,7 @@ export default function SignUpPage() {
     try {
       const displayName = `${firstName} ${lastName}`.trim()
       await signUp(email, password, displayName)
-      router.push('/services')
+      router.push('/personal-styling')
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : 'Failed to create account')
     } finally {
