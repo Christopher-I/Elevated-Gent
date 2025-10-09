@@ -8,6 +8,7 @@ import { PRODUCT_CATEGORIES } from '@/lib/products/types'
 import { ProductCard } from '@/components/products/ProductCard'
 import { OutfitCard } from '@/components/products/OutfitCard'
 import { StructuredData } from '@/components/seo/StructuredData'
+import ProtectedRoute from '@/components/auth/ProtectedRoute'
 
 const categoryOptions = [
   { id: 'all', label: 'All Categories' },
@@ -28,7 +29,7 @@ export default function WeeklyPage() {
   const featuredOutfits = outfitLooks.filter(outfit => outfit.featured)
 
   return (
-    <>
+    <ProtectedRoute>
       <StructuredData pageKey="weekly" />
       {/* Hero Section */}
       <section className="py-16">
@@ -148,6 +149,6 @@ export default function WeeklyPage() {
           </PagePadding>
         </section>
       )}
-    </>
+    </ProtectedRoute>
   )
 }

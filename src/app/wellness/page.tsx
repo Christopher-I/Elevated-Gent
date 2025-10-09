@@ -1,12 +1,15 @@
+'use client'
+
 import { PagePadding, Container } from '@/components/layout'
 import { articles } from '@/lib/articles/data'
 import { ArticleCard } from '@/components/articles/ArticleCard'
 import { StructuredData } from '@/components/seo/StructuredData'
+import ProtectedRoute from '@/components/auth/ProtectedRoute'
 
 export default function WellnessPage() {
 
   return (
-    <>
+    <ProtectedRoute>
       <StructuredData pageKey="wellness" />
 
       {/* Hero Section */}
@@ -41,6 +44,6 @@ export default function WellnessPage() {
           </Container>
         </PagePadding>
       </section>
-    </>
+    </ProtectedRoute>
   )
 }

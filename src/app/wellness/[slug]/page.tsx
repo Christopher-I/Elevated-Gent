@@ -1,3 +1,5 @@
+'use client'
+
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -5,6 +7,7 @@ import { PagePadding, Container } from '@/components/layout'
 import { getArticleBySlug, articles } from '@/lib/articles/data'
 import { RelatedProducts } from '@/components/articles/RelatedProducts'
 import { RelatedOutfit } from '@/components/articles/RelatedOutfit'
+import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import type { Metadata } from 'next'
 
 interface ArticlePageProps {
@@ -65,7 +68,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   })
 
   return (
-    <>
+    <ProtectedRoute>
       {/* Article Hero */}
       <section className="py-12">
         <PagePadding>
@@ -169,6 +172,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           </Container>
         </PagePadding>
       </section>
-    </>
+    </ProtectedRoute>
   )
 }

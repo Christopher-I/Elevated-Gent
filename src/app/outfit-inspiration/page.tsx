@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { StructuredData } from '@/components/seo/StructuredData'
 import { outfitLooks } from '@/lib/products/data'
 import { OutfitCard } from '@/components/products/OutfitCard'
+import ProtectedRoute from '@/components/auth/ProtectedRoute'
 
 // Map outfit occasions/styles to filter categories
 const getOutfitsByFilter = (filterId: string) => {
@@ -108,7 +109,7 @@ export default function CollectionsPage() {
   const filteredOutfits = getOutfitsByFilter(activeFilter)
 
   return (
-    <>
+    <ProtectedRoute>
       <StructuredData pageKey="outfit-inspiration" />
       {/* Hero Section */}
       <section className="py-16">
@@ -170,6 +171,6 @@ export default function CollectionsPage() {
         </PagePadding>
       </section>
 
-    </>
+    </ProtectedRoute>
   )
 }
