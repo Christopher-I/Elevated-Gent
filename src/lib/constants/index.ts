@@ -3,7 +3,7 @@ export const APP_CONFIG = {
   name: 'The Elevated Gentleman - Classic Styling For The Modern Man',
   description: 'Classic styling for the modern man',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-  supportEmail: 'support@theelevatedgentleman.com',
+  supportEmail: 'Markkoob@outlook.com',
 } as const
 
 // Navigation Links
