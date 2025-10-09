@@ -57,6 +57,7 @@ This document summarizes the major features and changes implemented over the pas
 - **User Understanding**: "Outfit Inspiration" is more engaging than "Collections"
 
 ---
+
 ## Subscription System Implementation
 
 ### The $2/Month Subscription Feature
