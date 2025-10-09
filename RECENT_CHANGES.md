@@ -61,7 +61,6 @@ This document summarizes the major features and changes implemented over the pas
 ## Subscription System Implementation
 
 ### The $2/Month Subscription Feature
-
 **Major Addition**: Wall Street Journal-style paywall system for monetization
 
 ### Features Implemented
