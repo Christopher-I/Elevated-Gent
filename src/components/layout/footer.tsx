@@ -19,7 +19,7 @@ const footerLinks = {
     { name: 'Wellness Articles', href: '/wellness' },
   ],
   company: [
-    { name: 'Contact Us', href: 'mailto:hello@theelevatedgentleman.com' },
+    { name: 'Contact Us', href: 'mailto:Markkoob@outlook.com' },
     { name: 'Privacy Policy', href: '/privacy' },
   ],
 }

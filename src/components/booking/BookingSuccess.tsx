@@ -97,8 +97,8 @@ export function BookingSuccess({ onClose }: BookingSuccessProps) {
 
         <p className="text-xs text-gray-500 font-serif">
           Questions? Email us at{' '}
-          <a href="mailto:hello@theelevatedgentleman.com" className="text-black hover:underline">
-            hello@theelevatedgentleman.com
+          <a href="mailto:Markkoob@outlook.com" className="text-black hover:underline">
+            Markkoob@outlook.com
           </a>
         </p>
       </div>

@@ -62,7 +62,7 @@ export const seoPages = {
       description: 'Professional styling services for the modern gentleman',
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'hello@theelevatedgentleman.com',
+        email: 'Markkoob@outlook.com',
         contactType: 'customer service'
       },
       sameAs: [
