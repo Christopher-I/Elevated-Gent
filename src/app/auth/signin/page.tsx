@@ -8,25 +8,6 @@ import { useAuth } from "@/lib/firebase/auth";
 import { Button } from "@/components/ui";
 import { PagePadding, Container } from "@/components/layout";
 
-// Test user accounts for quick login
-const TEST_USERS = [
-  {
-    name: "John Doe",
-    email: "john.doe@test.com",
-    password: "password123",
-  },
-  {
-    name: "Michael Smith",
-    email: "michael.smith@test.com",
-    password: "password123",
-  },
-  {
-    name: "David Johnson",
-    email: "david.johnson@test.com",
-    password: "password123",
-  },
-];
-
 export default function SignInPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,22 +23,6 @@ export default function SignInPage() {
 
     try {
       await signIn(email, password);
-      router.push("/personal-styling");
-    } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "Failed to sign in");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleQuickLogin = async (testUser: (typeof TEST_USERS)[0]) => {
-    setError("");
-    setLoading(true);
-    setEmail(testUser.email);
-    setPassword(testUser.password);
-
-    try {
-      await signIn(testUser.email, testUser.password);
       router.push("/personal-styling");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "Failed to sign in");
@@ -156,27 +121,6 @@ export default function SignInPage() {
                       {loading ? "Signing in..." : "Sign In"}
                     </Button>
                   </form>
-
-                  {/* Quick Login Buttons */}
-                  <div className="mt-6">
-                    <div className="text-center mb-4">
-                      <span className="text-sm text-gray-500 font-serif">
-                        Quick Login (Test Accounts)
-                      </span>
-                    </div>
-                    <div className="space-y-2">
-                      {TEST_USERS.map((user, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleQuickLogin(user)}
-                          disabled={loading}
-                          className="w-full px-4 py-2 text-sm bg-gray-50 hover:bg-black hover:text-white border border-gray-200 hover:border-black rounded-lg font-serif transition-all duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed hover:shadow-md"
-                        >
-                          Sign in as {user.name}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
 
                   <div className="mt-6 text-center">
                     <Link
