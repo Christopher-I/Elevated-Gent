@@ -8,7 +8,7 @@ export const APP_CONFIG = {
 
 // Navigation Links
 export const NAVIGATION_LINKS = [
-  { name: 'Personal Styling', href: '/personal-styling' },
+  { name: 'Personal Styling', href: 'https://app.theelevatedgentleman.com/' },
   { name: 'Outfit Inspiration', href: '/outfit-inspiration' },
   { name: 'Weekly Finds', href: '/weekly' },
   { name: 'Wellness', href: '/wellness' },
