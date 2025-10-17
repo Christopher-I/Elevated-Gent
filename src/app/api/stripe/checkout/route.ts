@@ -16,6 +16,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Get the base URL from request headers or environment variable
+    const origin = request.headers.get('origin') ||
+                   request.headers.get('referer')?.split('/').slice(0, 3).join('/') ||
+                   process.env.NEXT_PUBLIC_APP_URL ||
+                   'http://localhost:3001'
+
     // Create line items for Stripe
     interface CheckoutItem {
       name: string
@@ -43,8 +49,8 @@ export async function POST(request: NextRequest) {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: successUrl || `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelUrl || `${process.env.NEXT_PUBLIC_APP_URL}/cart`,
+      success_url: successUrl || `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: cancelUrl || `${origin}/cart`,
       metadata: metadata || {},
       allow_promotion_codes: true,
       billing_address_collection: 'required',

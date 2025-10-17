@@ -16,6 +16,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Get the base URL from request headers or environment variable
+    const origin = request.headers.get('origin') ||
+                   request.headers.get('referer')?.split('/').slice(0, 3).join('/') ||
+                   process.env.NEXT_PUBLIC_APP_URL ||
+                   'http://localhost:3001'
+
     // Create or retrieve Stripe customer
     let customer
     const existingCustomers = await stripe.customers.list({
@@ -55,8 +61,8 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'subscription',
-      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/account?subscription=success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/account?subscription=cancelled`,
+      success_url: `${origin}/account?subscription=success`,
+      cancel_url: `${origin}/account?subscription=cancelled`,
       metadata: {
         userId: userId,
       },

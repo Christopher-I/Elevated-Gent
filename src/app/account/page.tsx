@@ -14,15 +14,15 @@ export default function AccountPage() {
   const [showEditProfile, setShowEditProfile] = useState(false)
 
   const handleBookSession = () => {
-    router.push('/services')
+    router.push('/personal-styling')
   }
 
   const handleViewCollections = () => {
-    router.push('/collections')
+    router.push('/outfit-inspiration')
   }
 
   const handleLearnMore = () => {
-    router.push('/services')
+    router.push('/personal-styling')
   }
 
   const handleEditProfile = () => {
