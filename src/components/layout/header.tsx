@@ -37,7 +37,7 @@ export function Header() {
             <nav className="relative z-2 flex items-center justify-between pt-6 md:pt-12 pb-6">
               {/* Logo */}
               <div className="flex items-center">
-                <Link href="/" className="inline-block">
+                <Link href="https://theelevatedgentleman.com" className="inline-block">
                   <Image
                     src="/images/The Elevated gentleman.svg"
                     alt="The Elevated Gentleman"

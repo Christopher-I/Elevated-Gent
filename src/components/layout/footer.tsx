@@ -107,7 +107,7 @@ export function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               {/* Brand Section */}
               <div className="lg:col-span-2 space-y-6">
-                <Link href="/" className="inline-block">
+                <Link href="https://theelevatedgentleman.com" className="inline-block">
                   <Image
                     src="/images/The Elevated gentleman.svg"
                     alt="The Elevated Gentleman"
