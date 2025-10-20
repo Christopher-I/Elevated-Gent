@@ -50,21 +50,21 @@ export function Header() {
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center justify-end">
-                <div className="flex items-center gap-6 pl-6">
+                <div className="flex items-center gap-3 md:gap-4 lg:gap-6 pl-3 md:pl-4 lg:pl-6">
                   {/* Menu Links - Only show when user is authenticated */}
                   {user && (
                     <>
-                      <div className="z-1 flex items-center justify-center gap-6">
+                      <div className="z-1 flex items-center justify-center gap-3 md:gap-4 lg:gap-6">
                         {NAVIGATION_LINKS.map((link) => (
                           <Link
                             key={link.href}
                             href={link.href}
-                            className="group relative h-7 overflow-hidden text-decoration-none transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
+                            className="group relative h-7 overflow-hidden text-decoration-none transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer whitespace-nowrap"
                           >
-                            <div className="font-serif text-xl block">
+                            <div className="font-serif text-base md:text-lg lg:text-xl block">
                               {link.name}
                             </div>
-                            <div className="font-serif text-xl block">
+                            <div className="font-serif text-base md:text-lg lg:text-xl block">
                               {link.name}
                             </div>
                           </Link>
@@ -72,7 +72,7 @@ export function Header() {
                       </div>
 
                       {/* Menu Border */}
-                      <div className="w-[15px] h-px bg-black" />
+                      <div className="w-[10px] md:w-[12px] lg:w-[15px] h-px bg-black" />
                     </>
                   )}
 
