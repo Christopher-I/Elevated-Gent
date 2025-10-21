@@ -100,15 +100,15 @@ export function Header() {
 
                   {/* User Menu */}
                   {user && (
-                    <div className="ml-6 flex items-center gap-4">
-                      <span className="text-sm font-serif text-gray-600">
+                    <div className="ml-3 md:ml-4 lg:ml-6 flex items-center gap-2 md:gap-3 lg:gap-4">
+                      <span className="text-xs md:text-sm font-serif text-gray-600 truncate max-w-[80px] md:max-w-[120px] lg:max-w-none">
                         {user.displayName || user.email}
                       </span>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={handleLogout}
-                        className="text-sm"
+                        className="text-xs md:text-sm whitespace-nowrap"
                       >
                         Logout
                       </Button>
