@@ -38,12 +38,29 @@ export function Header() {
               {/* Logo */}
               <div className="flex items-center">
                 <Link href="https://theelevatedgentleman.com" className="inline-block">
+                  {/* Short logo for mobile */}
+                  <Image
+                    src="/EG.svg"
+                    alt="The Elevated Gentleman"
+                    width={40}
+                    height={40}
+                    className="h-6 w-auto md:hidden"
+                  />
+                  {/* Short logo for tablet */}
+                  <Image
+                    src="/EG.svg"
+                    alt="The Elevated Gentleman"
+                    width={50}
+                    height={50}
+                    className="hidden md:block lg:hidden h-8 w-auto"
+                  />
+                  {/* Full logo for desktop */}
                   <Image
                     src="/images/The Elevated gentleman.svg"
                     alt="The Elevated Gentleman"
                     width={330}
                     height={19}
-                    className="h-4 md:h-5 w-auto"
+                    className="hidden lg:block h-5 w-auto"
                   />
                 </Link>
               </div>
