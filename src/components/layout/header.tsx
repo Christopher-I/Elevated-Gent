@@ -67,21 +67,21 @@ export function Header() {
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center justify-end">
-                <div className="flex items-center gap-3 md:gap-4 lg:gap-6 pl-3 md:pl-4 lg:pl-6">
+                <div className="flex items-center gap-2 md:gap-3 lg:gap-6 pl-2 md:pl-3 lg:pl-6">
                   {/* Menu Links - Only show when user is authenticated */}
                   {user && (
                     <>
-                      <div className="z-1 flex items-center justify-center gap-3 md:gap-4 lg:gap-6">
+                      <div className="z-1 flex items-center justify-center gap-2 md:gap-3 lg:gap-6">
                         {NAVIGATION_LINKS.map((link) => (
                           <Link
                             key={link.href}
                             href={link.href}
                             className="group relative h-7 overflow-hidden text-decoration-none transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer whitespace-nowrap"
                           >
-                            <div className="font-serif text-base md:text-lg lg:text-xl block">
+                            <div className="font-serif text-sm md:text-base lg:text-xl block">
                               {link.name}
                             </div>
-                            <div className="font-serif text-base md:text-lg lg:text-xl block">
+                            <div className="font-serif text-sm md:text-base lg:text-xl block">
                               {link.name}
                             </div>
                           </Link>
@@ -89,7 +89,7 @@ export function Header() {
                       </div>
 
                       {/* Menu Border */}
-                      <div className="w-[10px] md:w-[12px] lg:w-[15px] h-px bg-black" />
+                      <div className="w-[8px] md:w-[10px] lg:w-[15px] h-px bg-black" />
                     </>
                   )}
 
@@ -117,7 +117,7 @@ export function Header() {
 
                   {/* User Menu */}
                   {user && (
-                    <div className="ml-3 md:ml-4 lg:ml-6 flex items-center gap-2 md:gap-3 lg:gap-4">
+                    <div className="ml-2 md:ml-3 lg:ml-6 flex items-center gap-1 md:gap-2 lg:gap-4">
                       <span className="hidden lg:block text-sm font-serif text-gray-600 truncate max-w-none">
                         {user.displayName || user.email}
                       </span>
@@ -125,7 +125,7 @@ export function Header() {
                         variant="outline"
                         size="sm"
                         onClick={handleLogout}
-                        className="text-xs md:text-sm whitespace-nowrap"
+                        className="text-[10px] md:text-xs lg:text-sm whitespace-nowrap px-2 md:px-3"
                       >
                         Logout
                       </Button>
