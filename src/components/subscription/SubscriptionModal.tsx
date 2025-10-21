@@ -24,7 +24,7 @@ export function SubscriptionModal({ onSubscribe, onClose }: SubscriptionModalPro
     <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4 backdrop-blur-sm">
       <div className="bg-white rounded-lg max-w-md w-full p-8 shadow-xl relative">
         {/* Close button */}
-        <button
+        {/* <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
           aria-label="Close"
@@ -32,7 +32,7 @@ export function SubscriptionModal({ onSubscribe, onClose }: SubscriptionModalPro
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
+        </button> */}
 
         <div className="text-center space-y-6">
           {/* Icon */}
