@@ -38,13 +38,13 @@ export function Header() {
               {/* Logo */}
               <div className="flex items-center">
                 <Link href="https://theelevatedgentleman.com" className="inline-block">
-                  {/* Short logo for mobile */}
+                  {/* Full logo for mobile */}
                   <Image
-                    src="/EG.svg"
+                    src="/images/The Elevated gentleman.svg"
                     alt="The Elevated Gentleman"
-                    width={40}
-                    height={40}
-                    className="h-6 w-auto md:hidden"
+                    width={330}
+                    height={19}
+                    className="h-4 w-auto md:hidden"
                   />
                   {/* Short logo for tablet */}
                   <Image
